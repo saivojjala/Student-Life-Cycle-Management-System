@@ -1,0 +1,1 @@
+# Student Life Cycle Management System
