@@ -16,7 +16,7 @@ urlpatterns = [
     path('login/',
          LoginView.as_view
          (
-             template_name='app/login.html',
+             template_name='admin/login.html',
              authentication_form=forms.BootstrapAuthenticationForm,
              extra_context=
              {
