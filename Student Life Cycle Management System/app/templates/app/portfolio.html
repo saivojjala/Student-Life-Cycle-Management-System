@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Life Cycle Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #eee;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #3e8e41;
+            }
+
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome {{student.name}}</h1>
+    </header>
+    <nav>
+        <button id="attendance-btn">Check Attendance</button>
+        <button id="grades-btn">Check Grades</button>
+    </nav>
+    <section>
+        <p>Welcome to the Student Life Cycle Management page. Please select one of the options above to check your attendance or grades.</p>
+    </section>
+    <script>
+		const attendanceBtn = document.getElementById("attendance-btn");
+		const gradesBtn = document.getElementById("grades-btn");
+		attendanceBtn.addEventListener("click", function() {
+			alert("Attendance page is not yet available.");
+		});
+		gradesBtn.addEventListener("click", function() {
+			alert("Grades page is not yet available.");
+		});
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <RootNamespace>Student Life Cycle Management System</RootNamespace>
     <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>Pytest</TestFramework>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -44,6 +45,9 @@
     <Compile Include="manage.py" />
     <Compile Include="slcm\admin.py" />
     <Compile Include="slcm\apps.py" />
+    <Compile Include="slcm\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="slcm\migrations\__init__.py" />
     <Compile Include="slcm\models.py" />
     <Compile Include="slcm\tests.py" />
@@ -71,6 +75,7 @@
     <Folder Include="Student_Life_Cycle_Management_System\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\portfolio.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

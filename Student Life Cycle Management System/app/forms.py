@@ -16,3 +16,7 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
+
+class StudentLogin(forms.Form):
+    reg_no = forms.IntegerField(label="Registration Number: ")
+    pswd = forms.CharField(widget = forms.PasswordInput, label = "Password: ")
