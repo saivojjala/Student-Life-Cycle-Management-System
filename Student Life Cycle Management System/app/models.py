@@ -18,10 +18,10 @@ class Subject(models.Model):
 
     # Define your choice options as a tuple of tuples
     CHOICES = (
-        ('option1', 'Data Structures'), ('option2', 'Object Oriented Programming'), 
-        ('option3','Digital Systems Design'), ('option4','Design and Analysis of Algorithms'), 
-        ('option5','Formal Languages and Automata Theory'), ('option6', 'Operating Systems'), 
-        ('option7','Computer Networks'), ('option8', 'Software Engineering'), ('option9','Compiler Design')
+        ('Data Structures', 'Data Structures'), ('Object Oriented Programming', 'Object Oriented Programming'), 
+        ('Digital Systems Design','Digital Systems Design'), ('Design and Analysis of Algorithms','Design and Analysis of Algorithms'), 
+        ('Formal Languages and Automata Theory','Formal Languages and Automata Theory'), ('Operating Systems', 'Operating Systems'), 
+        ('Computer Networks','Computer Networks'), ('Software Engineering', 'Software Engineering'), ('Compiler Design','Compiler Design')
     )
 
     choices = models.CharField(max_length=255)

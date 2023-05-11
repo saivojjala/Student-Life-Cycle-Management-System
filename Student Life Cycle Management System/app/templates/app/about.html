@@ -2,9 +2,71 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+<main>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-<p>Use this area to provide additional information.</p>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="https://iili.io/HUu1cb4.md.jpg" alt="HUu1cb4.md.jpg" border="0">
+            </div>
+
+            <div class="item">
+                <img src="https://iili.io/HUu1imv.md.jpg" alt="HUu1imv.md.jpg" border="0">
+            </div>
+
+            <div class="item">
+                <img src="https://iili.io/HUuE5CB.md.jpg" alt="HUuE5CB.md.jpg" border="0">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <section>
+        <h1>About SAMSAI University</h1>
+        <p>SAMSAI University was established in 2002 with the aim of providing quality education to students from all over India. The university offers a wide range of undergraduate and postgraduate programs in various disciplines.</p>
+        <p>Our mission is to create a learning environment that is inclusive, innovative, and inspires students to achieve their full potential. We are committed to providing our students with a transformative educational experience that prepares them for success in their chosen careers.</p>
+        <p>At SAMSAI University, we believe in the power of education to transform lives. We are proud of our students, alumni, and faculty who have contributed to making the world a better place.</p>
+    </section>
+
+    <section>
+        <h2>Our Campus</h2>
+        <p>Our campus is located in the heart of Navi Mumbai and is spread across 100 acres of lush greenery. We have state-of-the-art facilities including a library, computer labs, science labs, and sports facilities.</p>
+        <p>We believe that a beautiful and well-maintained campus plays an important role in creating a positive learning environment for our students.</p>
+    </section>
+
+    <section>
+        <h2>Our Faculty</h2>
+        <p>Our faculty is made up of experienced and dedicated professionals who are passionate about teaching and research. They are committed to providing our students with the highest quality education and preparing them for success in their careers.</p>
+        <p>Our faculty members are actively engaged in research and are published in leading academic journals. They also collaborate with industry partners to bring real-world experience to the classroom.</p>
+    </section>
+
+    <section>
+        <h2>Our Alumni</h2>
+        <p>Our alumni are leaders in their fields and have made significant contributions to society. They are a source of inspiration for our current students and we are proud to have them as part of the Mumbai University community.</p>
+        <p>We encourage our alumni to stay connected with the university and to give back to the community through mentorship, networking, and philanthropic initiatives.</p>
+    </section>
+
+    <section>
+        <h2>Our Partners</h2>
+        <p>We have partnerships with leading universities, research institutions, and industry partners around the world. These partnerships provide our students with opportunities for global learning and collaboration.</p>
+        <p>We are also committed to working with our partners to address some of the most pressing global challenges such as climate change, healthcare, and education.</p>
+    </section>
+</main>
 
 {% endblock %}
