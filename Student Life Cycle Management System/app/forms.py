@@ -5,6 +5,7 @@ Definition of forms.
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
+from .models import Subject
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     """Authentication form which uses boostrap CSS."""
@@ -20,3 +21,22 @@ class BootstrapAuthenticationForm(AuthenticationForm):
 class StudentLogin(forms.Form):
     reg_no = forms.IntegerField(label="Registration Number: ")
     pswd = forms.CharField(widget = forms.PasswordInput, label = "Password: ")
+
+class SubjectSelectionForm(forms.ModelForm):
+    # define the choices field as a MultipleChoiceField with ChoiceInput widgets
+    choices = forms.MultipleChoiceField(
+        widget=forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input'}),
+        choices=Subject.CHOICES,
+        required=False,
+    )
+
+    def clean_choices(self):
+        # check that at most MAX_CHOICES options are selected
+        choices = self.cleaned_data['choices']
+        if len(choices) > Subject.MAX_CHOICES:
+            raise forms.ValidationError(f'You can select up to {Subject.MAX_CHOICES} subjects.')
+        return ','.join(choices)
+
+    class Meta:
+        model = Subject
+        fields = ('choices',)

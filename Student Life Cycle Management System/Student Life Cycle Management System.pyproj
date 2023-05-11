@@ -33,6 +33,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
@@ -43,16 +46,6 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="manage.py" />
-    <Compile Include="slcm\admin.py" />
-    <Compile Include="slcm\apps.py" />
-    <Compile Include="slcm\forms.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="slcm\migrations\__init__.py" />
-    <Compile Include="slcm\models.py" />
-    <Compile Include="slcm\tests.py" />
-    <Compile Include="slcm\views.py" />
-    <Compile Include="slcm\__init__.py" />
     <Compile Include="Student_Life_Cycle_Management_System\__init__.py" />
     <Compile Include="Student_Life_Cycle_Management_System\settings.py" />
     <Compile Include="Student_Life_Cycle_Management_System\urls.py" />
@@ -68,14 +61,11 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
-    <Folder Include="slcm\" />
-    <Folder Include="slcm\migrations\" />
-    <Folder Include="slcm\templates\" />
-    <Folder Include="slcm\templates\slcm\" />
     <Folder Include="Student_Life_Cycle_Management_System\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\templates\app\portfolio.html" />
+    <Content Include="app\templates\app\select_subjects.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -106,7 +96,6 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
-    <Content Include="slcm\templates\slcm\index.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">

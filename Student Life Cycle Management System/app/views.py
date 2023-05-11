@@ -6,8 +6,8 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from django.contrib import messages
-from app.forms import StudentLogin
-from slcm.models import Registration
+from .models import Subject, Registration
+from .forms import SubjectSelectionForm, StudentLogin
 
 def home(request):
     """Renders the home page."""
@@ -71,4 +71,14 @@ def portfolio(request):
         else:
             messages.error(request, 'Invalid Username')
             return redirect('studentlogin')
-    
+   
+def selectSubjects(request):
+    if request.method == "GET":
+        form = SubjectSelectionForm()
+        return render(request, 'app/select_subjects.html', {'form': form})
+    elif request.method == 'POST':
+        form = SubjectSelectionForm(request.POST)
+        if form.is_valid():
+            my_subjects = form.save()
+            # do something with the model instance
+        return render(request, 'select_subjects.html', {'form': form})

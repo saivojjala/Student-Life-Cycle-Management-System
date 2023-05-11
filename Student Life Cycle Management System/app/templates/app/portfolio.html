@@ -3,6 +3,10 @@
 <head>
     <title>Student Life Cycle Management</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -40,6 +44,27 @@
         section {
             padding: 20px;
         }
+
+        .container {
+            width: 95%;
+            column-gap: 20px;
+        }
+
+        .col {
+            float: left;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+            border-style: groove;
+            border-radius: 25px;
+        }
+
+        .c1 {
+            width: 20%;
+        }
+
+        .c2 {
+            width: 60%;
+        }
     </style>
 </head>
 <body>
@@ -49,19 +74,41 @@
     <nav>
         <button id="attendance-btn">Check Attendance</button>
         <button id="grades-btn">Check Grades</button>
+        <button id="select-subjects-btn"><a href="{% url 'selectSubjects' %}">Select Subjects</a></button>
     </nav>
     <section>
         <p>Welcome to the Student Life Cycle Management page. Please select one of the options above to check your attendance or grades.</p>
     </section>
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col c1">
+                    <h3>NOTIFICATIONS</h3>
+                    <p>
+                        For daily updates regarding check HERE!!
+                    </p>
+                </div>
+                <div class="col c2">
+                    <center><h3>BIO-DATA</h3></center>
+                    <p>Know more about Yourself Over Here!!</p>
+                </div>
+                <div class="col c1">
+                    <center><h3>Finances</h3></center>
+                    <p>Check how much you are spending here!!</p>
+                </div>
+            </div>
+        </div>
+    </center>
     <script>
-		const attendanceBtn = document.getElementById("attendance-btn");
-		const gradesBtn = document.getElementById("grades-btn");
-		attendanceBtn.addEventListener("click", function() {
-			alert("Attendance page is not yet available.");
-		});
-		gradesBtn.addEventListener("click", function() {
-			alert("Grades page is not yet available.");
-		});
+        const attendanceBtn = document.getElementById("attendance-btn");
+        const gradesBtn = document.getElementById("grades-btn");
+        const selectSubjectBtn = document.getElementById("select-subjects-btn");
+        attendanceBtn.addEventListener("click", function () {
+            alert("Attendance page is not yet available.");
+        });
+        gradesBtn.addEventListener("click", function () {
+            alert("Grades page is not yet available.");
+        });
     </script>
 </body>
 </html>
