@@ -2,10 +2,12 @@
 Definition of forms.
 """
 
+from email.policy import default
+from tkinter import Widget
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
-from .models import Subject
+from .models import Subject, Registration
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     """Authentication form which uses boostrap CSS."""
@@ -33,9 +35,10 @@ class SubjectSelectionForm(forms.ModelForm):
     def clean_choices(self):
         # check that at most MAX_CHOICES options are selected
         choices = self.cleaned_data['choices']
-        if len(choices) > Subject.MAX_CHOICES:
-            raise forms.ValidationError(f'You can select up to {Subject.MAX_CHOICES} subjects.')
-        return ','.join(choices)
+      
+        #if len(choices) > Subject.MAX_CHOICES:
+        #   raise forms.ValidationError(f'You can select up to {Subject.MAX_CHOICES} subjects.')
+        return choices
 
     class Meta:
         model = Subject

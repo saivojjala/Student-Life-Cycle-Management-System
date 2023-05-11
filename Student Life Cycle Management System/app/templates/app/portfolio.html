@@ -74,7 +74,7 @@
     <nav>
         <button id="attendance-btn">Check Attendance</button>
         <button id="grades-btn">Check Grades</button>
-        <button id="select-subjects-btn"><a href="{% url 'selectSubjects' %}">Select Subjects</a></button>
+        <button id="select-subjects-btn"><a href="{% url 'selectSubjects' reg=student.reg_no %}">Select Subjects</a></button>
     </nav>
     <section>
         <p>Welcome to the Student Life Cycle Management page. Please select one of the options above to check your attendance or grades.</p>

@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="app\templates\app\portfolio.html" />
     <Content Include="app\templates\app\select_subjects.html" />
+    <Content Include="app\templates\thank_you.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

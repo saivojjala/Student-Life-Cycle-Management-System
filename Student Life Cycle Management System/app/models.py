@@ -36,3 +36,6 @@ class Subject(models.Model):
 
     # define a property for the selected choices
     selected_choices = property(get_choices, set_choices)
+
+    def __str__(self):
+        return str(self.reg_no)

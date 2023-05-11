@@ -6,7 +6,7 @@
     <title>Course Registration Page</title>
 </head>
 <body>
-    <form name="form" method="POST" action="{%url 'selectSubjects' %}">
+    <form name="form" method="POST" action="{%url 'selectSubjects' reg=reg %}">
         {% csrf_token %}
         {{form.as_p}}
         <input type="submit" value="Submit" />

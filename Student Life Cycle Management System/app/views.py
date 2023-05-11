@@ -64,6 +64,8 @@ def portfolio(request):
         if reg in regs:
             if paswd == Registration.objects.get(reg_no = reg).password:
                 student = Registration.objects.get(reg_no = reg)
+                request.session['registration_no'] = reg
+
                 return render(request, 'app/portfolio.html', {"student": student})
             else:
                 messages.error(request, 'Invalid Username')
@@ -72,13 +74,19 @@ def portfolio(request):
             messages.error(request, 'Invalid Username')
             return redirect('studentlogin')
    
-def selectSubjects(request):
+def selectSubjects(request, reg):
+    obj = Registration.objects.get(reg_no = reg)
     if request.method == "GET":
         form = SubjectSelectionForm()
-        return render(request, 'app/select_subjects.html', {'form': form})
+        return render(request, 'app/select_subjects.html', {'reg':reg, 'form': form})
     elif request.method == 'POST':
+        sub = Subject()
         form = SubjectSelectionForm(request.POST)
         if form.is_valid():
-            my_subjects = form.save()
+            sub.reg_no = obj
+            sub.choices = form.clean_choices()
+            print(sub.choices)
+            sub.save()
+            #my_subjects = form.save()
             # do something with the model instance
-        return render(request, 'select_subjects.html', {'form': form})
+        return render(request, 'thank_you.html', {'student': obj})
