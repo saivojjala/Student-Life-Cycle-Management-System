@@ -20,16 +20,33 @@
         border: double;
         padding: 10px;
         box-shadow: 5px 10px #888888;
-        width: 50%
+        width: 50%;
+        border-radius: 20px;
     }
 
     .form-group {
         font-size: 120%;
     }
+
+    marquee {
+        background-color: red;
+        color: white;
+        vspace: 20%;
+    }
+
+    .my-btn {
+        background-color: #A2A378;
+        color: black;
+        width: 100px;
+    }
+        .my-btn:hover {
+            background-color: #83764F;
+            color: white;
+        }
 </style>
 
 <center>
-    <marquee>Get Yourself Registered</marquee>
+    <h3><marquee scrollamount="10">Get Yourself Registered</marquee></h3>
     <div class="container mycont">
         <section id="loginForm">
             <form action="{% url 'portfolio' %}" method="post" class="form-horizontal">
@@ -46,7 +63,7 @@
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="next" value="/" />
-                    <input type="submit" value="Log in" class="btn btn-default" />
+                    <input type="submit" value="Log in" class="btn my-btn" />
                 </div>
                 {% if form.errors %}
                 <p class="validation-summary-errors">Please enter a correct user name and password.</p>

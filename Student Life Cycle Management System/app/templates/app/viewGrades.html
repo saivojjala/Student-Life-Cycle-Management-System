@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Vour Grade Sheet</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+        {% for i in list %}
+            <tr>
+                <td>{{i.select_subject}}</td>
+                <td>{{i.grade}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

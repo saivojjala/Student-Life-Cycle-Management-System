@@ -6,7 +6,7 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from django.contrib import messages
-from .models import Subject, Registration
+from .models import Subject, Registration, GradeAttendance
 from .forms import SubjectSelectionForm, StudentLogin
 
 def home(request):
@@ -90,3 +90,15 @@ def selectSubjects(request, reg):
             #my_subjects = form.save()
             # do something with the model instance
         return render(request, 'thank_you.html', {'student': obj})
+
+def viewGrades(request, reg):
+    reg = Registration.objects.get(reg_no=reg)
+    grades = GradeAttendance.objects.filter(reg_no = reg)
+
+    return render(request, "app/viewGrades.html", {'list':grades})
+
+def viewAttendance(request, reg):
+    reg = Registration.objects.get(reg_no=reg)
+    attendance = GradeAttendance.objects.filter(reg_no = reg)
+  
+    return render(request, "app/viewAttendance.html", {'list':attendance})

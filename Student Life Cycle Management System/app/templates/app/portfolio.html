@@ -11,17 +11,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #F9FBE7;
         }
 
         header {
-            background-color: #333;
+            background-color: #83764F;
             color: white;
             padding: 10px;
             text-align: center;
         }
 
         nav {
-            background-color: #eee;
+            background-color: #FEA1A1;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -60,10 +61,18 @@
 
         .c1 {
             width: 20%;
+            background-color: #F0EDD4;
         }
 
         .c2 {
             width: 60%;
+            background-color: #ECCDB4;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center
         }
     </style>
 </head>
@@ -72,9 +81,9 @@
         <h1>Welcome {{student.name}}</h1>
     </header>
     <nav>
-        <button id="attendance-btn">Check Attendance</button>
-        <button id="grades-btn">Check Grades</button>
-        <button id="select-subjects-btn"><a href="{% url 'selectSubjects' reg=student.reg_no %}">Select Subjects</a></button>
+        <form action="{% url 'viewAttendance' reg=student.reg_no %}"><button id="attendance-btn">Check Attendance</button></form>
+        <form action="{% url 'viewGrades' reg=student.reg_no %}"><button id="grades-btn">Check Grades</button></form>
+        <form action="{% url 'selectSubjects' reg=student.reg_no %}"><button id="select-subjects-btn">Select Subjects</button></form>
     </nav>
     <section>
         <p>Welcome to the Student Life Cycle Management page. Please select one of the options above to check your attendance or grades.</p>
@@ -90,7 +99,32 @@
                 </div>
                 <div class="col c2">
                     <center><h3>BIO-DATA</h3></center>
-                    <p>Know more about Yourself Over Here!!</p>
+                    <table style="width:100%">
+                        <tr>
+                            <th>Name:</th>
+                            <td>{{student.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Registration Number:</th>
+                            <td>{{student.reg_no}}</td>
+                        </tr>
+                        <tr>
+                            <th>Father's Name':</th>
+                            <td>{{student.father_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Mother's Name:':</th>
+                            <td>{{student.mother_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Contact:</th>
+                            <td>+91 {{student.contact}}</td>
+                        </tr>
+                        <tr>
+                            <th>City of Residence:</th>
+                            <td>{{student.city}}</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col c1">
                     <center><h3>Finances</h3></center>
@@ -103,12 +137,6 @@
         const attendanceBtn = document.getElementById("attendance-btn");
         const gradesBtn = document.getElementById("grades-btn");
         const selectSubjectBtn = document.getElementById("select-subjects-btn");
-        attendanceBtn.addEventListener("click", function () {
-            alert("Attendance page is not yet available.");
-        });
-        gradesBtn.addEventListener("click", function () {
-            alert("Grades page is not yet available.");
-        });
     </script>
 </body>
 </html>
