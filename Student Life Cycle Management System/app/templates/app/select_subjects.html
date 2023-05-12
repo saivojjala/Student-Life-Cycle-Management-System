@@ -4,12 +4,45 @@
 <head>
     <meta charset="utf-8" />
     <title>Course Registration Page</title>
+    <style>
+        body {
+            background-color: #DAF5FF;
+        }
+        .container {
+            font-family: Tahoma;
+            font-weight: 300;
+            padding: 10px;
+            border: 3px solid;
+            background-color: #F9FBE7;
+            border-radius: 25px;
+            height: 450px;
+            box-shadow: 5px 10px #888888;
+        }
+
+        .my-btn {
+            font-size: 24px;
+            background-color: #A2A378;
+            color: black;
+            width: 50%;
+            height: 50%;
+        }
+
+        .my-btn:hover {
+            background-color: #83764F;
+            color: white;
+        }
+
+
+    </style>
 </head>
 <body>
-    <form name="form" method="POST" action="{%url 'selectSubjects' reg=reg %}">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit" />
-    </form>
+    <div class="container">
+        <center><h1 underline="True">Select The Subject of Your Choice</h1></center>
+        <form name="form" method="POST" action="{%url 'selectSubjects' reg=reg %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <center><button class="my-btn">Submit!</button></center>
+        </form>
+    </div>
 </body>
 </html>

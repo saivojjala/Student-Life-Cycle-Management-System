@@ -3,9 +3,45 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>THANK YOU</title>
+
+    <style>
+        body {
+            background-color: #DAF5FF;
+        }
+
+        .my-btn {
+            background-color: #fbeee0;
+            border: 2px solid #422800;
+            border-radius: 30px;
+            box-shadow: #422800 3px 3px 0 0;
+            color: #422800;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 0 18px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+            .my-btn:hover {
+                background-color: #fff;
+            }
+
+            .my-btn:active {
+                box-shadow: #422800 2px 2px 0 0;
+                transform: translate(2px, 2px);
+            }
+    </style>
 </head>
 <body>
-    <h1>Thank You {{student.name}}</h1>
+    <center><h1>Your Response has been received!!</h1></center>
+    <br /><br />
+    <center><form action="{% url 'goHome' reg=student.reg_no %}"><button class="my-btn">Go Back To Portfolio</button></form></center>
 </body>
 </html>

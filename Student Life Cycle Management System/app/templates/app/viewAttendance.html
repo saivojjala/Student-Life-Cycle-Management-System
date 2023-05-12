@@ -4,19 +4,92 @@
 <head>
     <meta charset="utf-8" />
     <title>Vour Attendance</title>
+    <style>
+        body {
+            background-color: #ECF9FF;
+            background-image: url('https://i.ibb.co/r7hgb5h/attendance.jpg');
+            background-repeat: no-repeat;
+            backgrond-attachment: fixed;
+            background-size: cover;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: dotted;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            border: dotted;
+        }
+
+        th {
+            color: #FEA1A1;
+            background-color: #454545;
+        }
+
+        td {
+            background-color: #FFE6C7;
+        }
+
+        .container {
+            border: 3px solid;
+            background-color: #F9FBE7;
+            border-radius: 25px;
+            height: 300px;
+            box-shadow: 5px 10px #888888;
+        }
+
+
+        .my-btn {
+            background-color: #fbeee0;
+            border: 2px solid #422800;
+            border-radius: 30px;
+            box-shadow: #422800 3px 3px 0 0;
+            color: #422800;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 0 18px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+            .my-btn:hover {
+                background-color: #fff;
+            }
+
+            .my-btn:active {
+                box-shadow: #422800 2px 2px 0 0;
+                transform: translate(2px, 2px);
+            }
+    </style>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <th>Subject</th>
-            <th>Attendance(%)</th>
-        </tr>
-        {% for i in list %}
-        <tr>
-            <td>{{i.select_subject}}</td>
-            <td>{{i.attendance}}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <center><h1>SAMSAI University</h1></center>
+        <table border="1">
+            <tr>
+                <th>Subject</th>
+                <th>Attendance(%)</th>
+            </tr>
+            {% for i in list %}
+            <tr>
+                <td>{{i.select_subject}}</td>
+                <td>{{i.attendance}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br />
+        <center><form action="{% url 'goHome' reg=reg %}"><button class="my-btn">Go Back To Portfolio</button></form></center>
+    </div>
 </body>
 </html>

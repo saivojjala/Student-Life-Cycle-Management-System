@@ -52,6 +52,10 @@ def login(request):
 
     return render(request, 'app/login.html', {"form": ip})
 
+def goHome(request, reg):
+    obj = Registration.objects.get(reg_no = reg)
+    return render(request, 'app/portfolio.html', {"student": obj})
+
 def portfolio(request):
     data = Registration.objects.values('reg_no')
     regs = [i['reg_no'] for i in data]
@@ -87,18 +91,17 @@ def selectSubjects(request, reg):
             sub.choices = form.clean_choices()
             print(sub.choices)
             sub.save()
-            #my_subjects = form.save()
             # do something with the model instance
         return render(request, 'thank_you.html', {'student': obj})
 
 def viewGrades(request, reg):
-    reg = Registration.objects.get(reg_no=reg)
+    obj = Registration.objects.get(reg_no=reg)
     grades = GradeAttendance.objects.filter(reg_no = reg)
 
-    return render(request, "app/viewGrades.html", {'list':grades})
+    return render(request, "app/viewGrades.html", {'list':grades, "reg": obj.reg_no})
 
 def viewAttendance(request, reg):
-    reg = Registration.objects.get(reg_no=reg)
+    obj = Registration.objects.get(reg_no=reg)
     attendance = GradeAttendance.objects.filter(reg_no = reg)
   
-    return render(request, "app/viewAttendance.html", {'list':attendance})
+    return render(request, "app/viewAttendance.html", {'list':attendance, "reg": obj})
